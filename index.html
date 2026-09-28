@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nishant Singh | Full Stack MERN Developer & AI Integration Enthusiast</title>
+  <meta name="description"
+    content="Portfolio of Nishant Singh - Full Stack MERN Developer, AI Integration Enthusiast, and Microsoft Azure Certified Software Engineer based in Kanpur, UP.">
+  <meta name="keywords"
+    content="Nishant Singh, Full Stack Developer, MERN Stack, React.js, Node.js, Express, MongoDB, AI Integration, Portfolio">
+  <meta name="author" content="Nishant Singh">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Nishant Singh | Full Stack MERN Developer">
+  <meta property="og:description"
+    content="Explore full stack projects, AI integrations, cloud architecture, and credentials of Nishant Singh.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile.jpg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="dark-theme">
+  <!-- Glowing Cursor Follower -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Ambient Background Gradients -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="navbar container">
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-code-fork"></i> Projects</a></li>
+          <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+          <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-award"></i> Certificates</a></li>
+          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Audio effects toggle -->
+        <button id="audioToggle" class="icon-btn" title="Toggle UI Sound Effects" aria-label="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-high" id="audioIcon"></i>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="mainContent">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <!-- 3D Three.js Interactive Canvas Container -->
+      <div id="threeCanvasContainer" class="three-canvas-container"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="status-badge" data-aos="fade-down">
+            <span class="status-indicator">
+              <span class="status-dot"></span>
+              <span class="status-pulse"></span>
+            </span>
+            <span class="status-text">Available for Full-time Roles & Internships</span>
+          </div>
+
+          <div class="location-tag">
+            <i class="fa-solid fa-location-dot"></i> Kanpur, Uttar Pradesh, India
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text text-glitch" data-text="Nishant Singh">Nishant Singh</span>
+          </h1>
+
+          <!-- Dynamic Role Typing Subheading -->
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Specialized in </span>
+            <span class="typed-role" id="typedRole">Full Stack MERN Developer</span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <!-- Summary Bio -->
+          <p class="hero-bio">
+            Innovative Computer Science engineer building secure, high-performance web applications and real-time
+            distributed systems. Bridging cutting-edge <strong>AI capabilities</strong>, modern <strong>MERN
+              architecture</strong>, and certified <strong>Cloud Infrastructure</strong> to build unforgettable digital
+            experiences.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary btn-glow">
+              <i class="fa-solid fa-rocket"></i> Explore Projects
+            </a>
+            <a href="assets/docs/Nishant_Singh_Resume.pdf" download="Nishant_Singh_Resume.pdf"
+              class="btn btn-secondary">
+              <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </a>
+            <button class="btn btn-glass" id="heroResumeBtn">
+              <i class="fa-solid fa-file-invoice"></i> View Resume
+            </button>
+          </div>
+
+          <!-- Quick Direct Reach / Links -->
+          <div class="hero-social-links">
+            <a href="https://github.com/nishantsingh95" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+              <span class="social-label">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nishant-singh-2045b3267/" target="_blank" rel="noopener noreferrer"
+              class="social-link" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span class="social-label">LinkedIn</span>
+            </a>
+            <a href="mailto:nishantsingh8195@gmail.com" class="social-link" title="Send Email">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="social-label">Email</span>
+            </a>
+            <a href="tel:+919555535045" class="social-link" title="Call Directly">
+              <i class="fa-solid fa-phone"></i>
+              <span class="social-label">+91-9555535045</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3D Hero Visual Avatar Card -->
+        <div class="hero-visual">
+          <div class="avatar-card-3d" id="heroAvatarCard">
+            <div class="avatar-card-inner">
+              <div class="avatar-glow-ring"></div>
+              <div class="avatar-image-wrapper">
+                <img src="assets/images/profile.jpg?v=2" alt="Nishant Singh - Full Stack Developer" class="avatar-img"
+                  id="heroAvatarImg" loading="eager">
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-badge badge-top-right">
+                <i class="fa-brands fa-react react-spin"></i>
+                <div>
+                  <strong>MERN Stack</strong>
+                  <span>Production Ready</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-left">
+                <i class="fa-solid fa-brain ai-pulse"></i>
+                <div>
+                  <strong>AI Integrated</strong>
+                  <span>Gemini API</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-right">
+                <i class="fa-brands fa-microsoft azure-glow"></i>
+                <div>
+                  <strong>AZ-900 Certified</strong>
+                  <span>Cloud Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#stats" class="scroll-down-indicator" aria-label="Scroll down">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span>SCROLL TO EXPLORE</span>
+      </a>
+    </section>
+
+    <!-- LIVE STATS BANNER -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="stat-content">
+              <h3 class="stat-number"><span class="counter" data-target="8.28">0</span> <span
+                  class="stat-suffix">CGPA</span></h3>
+              <p class="stat-label">B.Tech CSE '26 • ITM University</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="stat-content">
+              <h3 class="stat-number"><span class="counter" data-target="3">0</span><span class="stat-suffix">+</span>
+              </h3>
+              <p class="stat-label">Production-Grade MERN Projects</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="stat-content">
+              <h3 class="stat-number"><span class="counter" data-target="35">0</span><span class="stat-suffix">%</span>
+              </h3>
+              <p class="stat-label">Page Load Time Reduced (InternPe)</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="stat-content">
+              <h3 class="stat-number"><span class="counter" data-target="3">0</span><span class="stat-suffix"></span>
+              </h3>
+              <p class="stat-label">Industry & Cloud Certifications</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-terminal"></i> Who Am I</span>
+          <h2 class="section-title">Architecting <span class="gradient-text">Scalable Solutions</span> With Heart & Code
+          </h2>
+          <p class="section-desc">Get to know the developer behind the keyboard, my engineering philosophy, and
+            educational background.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-panel" data-tilt>
+            <div class="card-glow-indicator"></div>
+            <h3 class="about-heading"><i class="fa-solid fa-id-card-clip"></i> Background & Summary</h3>
+            <p class="about-text">
+              I am an innovative and performance-driven <strong>Computer Science undergraduate</strong> at ITM
+              University, Gwalior with strong expertise in full-stack MERN development, AI integration, and modern web
+              architectures.
+            </p>
+            <p class="about-text">
+              My engineering journey centers around creating scalable, secure, and real-time distributed platforms.
+              Certified in <strong>Microsoft Azure Fundamentals (AZ-900)</strong>, I integrate cloud-native best
+              practices with responsive frontend experiences and resilient REST/Socket APIs.
+            </p>
+
+            <!-- Education Snapshot -->
+            <div class="education-box">
+              <div class="edu-icon">
+                <i class="fa-solid fa-university"></i>
+              </div>
+              <div class="edu-details">
+                <div class="edu-header">
+                  <h4>ITM University, Gwalior MP</h4>
+                  <span class="edu-badge">Sep 2022 - June 2026</span>
+                </div>
+                <p class="edu-degree">Bachelor of Technology in Computer Science Engineering</p>
+                <div class="edu-meta">
+                  <span class="edu-cgpa"><i class="fa-solid fa-star"></i> CGPA: <strong>8.28 / 10</strong></span>
+                  <span class="edu-status"><i class="fa-solid fa-circle-check"></i> Final Phase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Pillars Grid -->
+          <div class="pillars-grid">
+            <div class="pillar-card glass-panel" data-tilt>
+              <div class="pillar-icon"><i class="fa-brands fa-node-js"></i></div>
+              <h4>Full-Stack Architecture</h4>
+              <p>End-to-end MERN development with secure JWT authentication, MongoDB schema design, and modular RESTful
+                backends.</p>
+            </div>
+
+            <div class="pillar-card glass-panel" data-tilt>
+              <div class="pillar-icon"><i class="fa-solid fa-robot"></i></div>
+              <h4>AI Integration</h4>
+              <p>Embedding Gemini AI assistants, automated prompt workflows, and intelligent chat assistants to solve
+                user needs in real-time.</p>
+            </div>
+
+            <div class="pillar-card glass-panel" data-tilt>
+              <div class="pillar-icon"><i class="fa-solid fa-cloud"></i></div>
+              <h4>Cloud & DevOps</h4>
+              <p>Azure AZ-900 certified, working with AWS (ECS, EC2, S3), Docker containerization, and modern deployment
+                pipelines (Vercel, Render).</p>
+            </div>
+
+            <div class="pillar-card glass-panel" data-tilt>
+              <div class="pillar-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+              <h4>Real-Time & Performance</h4>
+              <p>Socket.IO bidirectional event streams for live order tracking, location updates, and 35%+ page speed
+                optimizations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Technical Arsenal</span>
+          <h2 class="section-title">Tools & <span class="gradient-text">Technologies</span> I Command</h2>
+          <p class="section-desc">A categorized overview of programming languages, libraries, platforms, and computer
+            science fundamentals.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter-container">
+          <button class="skill-tab active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Skills</button>
+          <button class="skill-tab" data-filter="languages"><i class="fa-solid fa-code"></i> Languages</button>
+          <button class="skill-tab" data-filter="frontend"><i class="fa-solid fa-desktop"></i> Frontend</button>
+          <button class="skill-tab" data-filter="backend"><i class="fa-solid fa-server"></i> Backend</button>
+          <button class="skill-tab" data-filter="database"><i class="fa-solid fa-database"></i> Database</button>
+          <button class="skill-tab" data-filter="cloud"><i class="fa-solid fa-cloud"></i> Cloud & DevOps</button>
+          <button class="skill-tab" data-filter="fundamentals"><i class="fa-solid fa-book-bookmark"></i> CS
+            Fundamentals</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skillsGrid">
+
+          <!-- Programming Languages -->
+          <div class="skill-card glass-panel" data-category="languages" data-tilt>
+            <div class="skill-icon-wrap js-color">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-pct">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 95%;"></div>
+              </div>
+              <span class="skill-sub">Async/Await, DOM, Event Loops, Modular</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="languages" data-tilt>
+            <div class="skill-icon-wrap java-color">
+              <i class="fa-brands fa-java"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Java</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 88%;"></div>
+              </div>
+              <span class="skill-sub">OOP Concepts, Collections, Multithreading</span>
+            </div>
+          </div>
+
+          <!-- Frontend Technologies -->
+          <div class="skill-card glass-panel" data-category="frontend" data-tilt>
+            <div class="skill-icon-wrap react-color">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">React.js</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 92%;"></div>
+              </div>
+              <span class="skill-sub">Hooks, Context API, Redux, Performance</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="frontend" data-tilt>
+            <div class="skill-icon-wrap ts-color">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%;"></div>
+              </div>
+              <span class="skill-sub">Strict Typing, Interfaces, Generics</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="frontend" data-tilt>
+            <div class="skill-icon-wrap tailwind-color">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Tailwind CSS</span>
+                <span class="skill-pct">94%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 94%;"></div>
+              </div>
+              <span class="skill-sub">Custom Themes, Responsive, JIT Utilities</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="frontend" data-tilt>
+            <div class="skill-icon-wrap html-color">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">HTML5 & CSS3</span>
+                <span class="skill-pct">96%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 96%;"></div>
+              </div>
+              <span class="skill-sub">Semantic Markup, Grid, Flexbox, Animations</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="frontend" data-tilt>
+            <div class="skill-icon-wrap mui-color">
+              <i class="fa-brands fa-bootstrap"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Bootstrap & Material UI</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 88%;"></div>
+              </div>
+              <span class="skill-sub">Component Libraries, Adaptive Layouts</span>
+            </div>
+          </div>
+
+          <!-- Backend Technologies -->
+          <div class="skill-card glass-panel" data-category="backend" data-tilt>
+            <div class="skill-icon-wrap node-color">
+              <i class="fa-brands fa-node"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;"></div>
+              </div>
+              <span class="skill-sub">Event-driven, Streams, File System, Modules</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="backend" data-tilt>
+            <div class="skill-icon-wrap express-color">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Express.js</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;"></div>
+              </div>
+              <span class="skill-sub">Middleware Architecture, Routing, Security</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="backend" data-tilt>
+            <div class="skill-icon-wrap rest-color">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">RESTful API Development</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 92%;"></div>
+              </div>
+              <span class="skill-sub">API Design, JSON, CRUD, Status Codes, Versioning</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="backend" data-tilt>
+            <div class="skill-icon-wrap jwt-color">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">JWT Authentication</span>
+                <span class="skill-pct">89%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 89%;"></div>
+              </div>
+              <span class="skill-sub">Token Sign/Verify, Refresh Tokens, RBAC</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="backend" data-tilt>
+            <div class="skill-icon-wrap socket-color">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Socket.IO</span>
+                <span class="skill-pct">87%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 87%;"></div>
+              </div>
+              <span class="skill-sub">Bidirectional WebSocket, Rooms, Live GPS Updates</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-card glass-panel" data-category="database" data-tilt>
+            <div class="skill-icon-wrap mongo-color">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;"></div>
+              </div>
+              <span class="skill-sub">Mongoose ODM, Aggregations, Indexing</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="database" data-tilt>
+            <div class="skill-icon-wrap sql-color">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-pct">84%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 84%;"></div>
+              </div>
+              <span class="skill-sub">Relational Schema, Joins, Triggers, Normalization</span>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-card glass-panel" data-category="cloud" data-tilt>
+            <div class="skill-icon-wrap azure-color">
+              <i class="fa-brands fa-microsoft"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Microsoft Azure (AZ-900)</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 88%;"></div>
+              </div>
+              <span class="skill-sub">Cloud Architecture, Security, Storage, Resource Groups</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="cloud" data-tilt>
+            <div class="skill-icon-wrap aws-color">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">AWS (ECS, EC2, S3)</span>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 82%;"></div>
+              </div>
+              <span class="skill-sub">Container Service, Compute Instances, Bucket Storage</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="cloud" data-tilt>
+            <div class="skill-icon-wrap docker-color">
+              <i class="fa-brands fa-docker"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Docker</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 80%;"></div>
+              </div>
+              <span class="skill-sub">Dockerfiles, Images, Multi-container setup</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="cloud" data-tilt>
+            <div class="skill-icon-wrap deploy-color">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Vercel, Netlify, Render</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 92%;"></div>
+              </div>
+              <span class="skill-sub">CI/CD, Serverless, Environment Configs</span>
+            </div>
+          </div>
+
+          <!-- Fundamentals -->
+          <div class="skill-card glass-panel" data-category="fundamentals" data-tilt>
+            <div class="skill-icon-wrap cs-color">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Data Structures & Algorithms</span>
+                <span class="skill-pct">86%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 86%;"></div>
+              </div>
+              <span class="skill-sub">Trees, Graphs, Sorting, Dynamic Programming</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="fundamentals" data-tilt>
+            <div class="skill-icon-wrap oop-color">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">OOP & Software Architecture</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;"></div>
+              </div>
+              <span class="skill-sub">Encapsulation, Polymorphism, SOLID, Design Patterns</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="fundamentals" data-tilt>
+            <div class="skill-icon-wrap os-color">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">OS & Computer Networks</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%;"></div>
+              </div>
+              <span class="skill-sub">Process Scheduling, Memory, TCP/IP, HTTP/HTTPS</span>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="fundamentals" data-tilt>
+            <div class="skill-icon-wrap git-color">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-top">
+                <span class="skill-name">Git, GitHub & Postman</span>
+                <span class="skill-pct">94%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 94%;"></div>
+              </div>
+              <span class="skill-sub">Branching, PRs, API Testing, VS Code</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Engineering Showcase</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Full-Stack Projects</span></h2>
+          <p class="section-desc">Handcrafted production-grade web systems featuring MERN architecture, AI automation,
+            and real-time sockets.</p>
+        </div>
+
+        <div class="projects-container">
+
+          <!-- PROJECT 1: Jharkhand Tourism Platform -->
+          <article class="project-showcase-card glass-panel" data-tilt>
+            <div class="project-image-side">
+              <div class="project-img-wrapper">
+                <img src="assets/images/tourism.jpg" alt="Jharkhand Tourism Platform Preview" loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://jharkhandtourismm.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <button class="btn btn-glass btn-sm view-project-btn" data-project="tourism">
+                    <i class="fa-solid fa-layer-group"></i> Architecture & Info
+                  </button>
+                </div>
+              </div>
+              <div class="project-floating-tags">
+                <span class="badge-tag ai-tag"><i class="fa-solid fa-sparkles"></i> AI-Powered</span>
+                <span class="badge-tag fullstack-tag"><i class="fa-solid fa-layer-group"></i> Full Stack MERN</span>
+              </div>
+            </div>
+
+            <div class="project-info-side">
+              <div class="project-category-badge">
+                <i class="fa-solid fa-mountain-sun"></i> Tourism & E-Commerce
+              </div>
+              <h3 class="project-title">Jharkhand Tourism Platform</h3>
+              <p class="project-tagline">Comprehensive AI-enabled tourism portal promoting regional discovery, bookings,
+                and cultural commerce.</p>
+
+              <div class="project-description-box">
+                <ul class="project-bullets">
+                  <li><strong>AI Travel Assistant:</strong> Integrated conversational AI assistant guiding tourists
+                    through custom itinerary planning, regional insights, and instant inquiry responses.</li>
+                  <li><strong>Marketplace & Bookings:</strong> Direct booking pipeline for curated tour packages and
+                    local indigenous handicrafts empowering native artisans.</li>
+                  <li><strong>Dynamic Admin Dashboard:</strong> Purpose-built management console allowing state
+                    administrators to track bookings, update destinations, and analyze traveler demand.</li>
+                </ul>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">AI Integration</span>
+                <span class="tech-pill">REST APIs</span>
+              </div>
+
+              <!-- Action Links -->
+              <div class="project-links">
+                <a href="https://jharkhandtourismm.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <button class="btn btn-outline btn-sm view-project-btn" data-project="tourism">
+                  <i class="fa-solid fa-layer-group"></i> Architecture & Details
+                </button>
+                <a href="https://github.com/nishantsingh95/Jharkhand-Tourism.git" target="_blank"
+                  rel="noopener noreferrer" class="btn btn-glass btn-sm" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Gymee: Gym Management System -->
+          <article class="project-showcase-card glass-panel reverse-card" data-tilt>
+            <div class="project-image-side">
+              <div class="project-img-wrapper">
+                <img src="assets/images/gymee.jpg" alt="Gymee Gym Management System Preview" loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://gymmeee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <button class="btn btn-glass btn-sm view-project-btn" data-project="gymee">
+                    <i class="fa-solid fa-layer-group"></i> Architecture & Info
+                  </button>
+                </div>
+              </div>
+              <div class="project-floating-tags">
+                <span class="badge-tag gemini-tag"><i class="fa-solid fa-gem"></i> Google Gemini AI</span>
+                <span class="badge-tag auth-tag"><i class="fa-solid fa-shield"></i> JWT Security</span>
+              </div>
+            </div>
+
+            <div class="project-info-side">
+              <div class="project-category-badge">
+                <i class="fa-solid fa-dumbbell"></i> SaaS & Fitness Management
+              </div>
+              <h3 class="project-title">Gymee: Gym Management System</h3>
+              <p class="project-tagline">Smart automated gym administration platform with AI concierge and member
+                workflow automation.</p>
+
+              <div class="project-description-box">
+                <ul class="project-bullets">
+                  <li><strong>Google Gemini AI Chatbot:</strong> Integrated Gemini AI virtual fitness assistant for 24/7
+                    client query resolution, workout recommendations, and member support.</li>
+                  <li><strong>Automated Communications:</strong> Scheduled automated email notifications for membership
+                    renewals, class reminders, and administrative alerts.</li>
+                  <li><strong>Responsive Modern UI:</strong> Built with React.js, Tailwind CSS, and Framer Motion
+                    micro-interactions, providing accessible role-based management dashboards.</li>
+                </ul>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Google Gemini AI</span>
+                <span class="tech-pill">JWT Auth</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">Framer Motion</span>
+              </div>
+
+              <!-- Action Links -->
+              <div class="project-links">
+                <a href="https://gymmeee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <button class="btn btn-outline btn-sm view-project-btn" data-project="gymee">
+                  <i class="fa-solid fa-layer-group"></i> Architecture & Details
+                </button>
+                <a href="https://github.com/nishantsingh95/Gymme.git" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-glass btn-sm" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Foodie: MERN Food Delivery System -->
+          <article class="project-showcase-card glass-panel" data-tilt>
+            <div class="project-image-side">
+              <div class="project-img-wrapper">
+                <img src="assets/images/foodie.jpg" alt="Foodie MERN Delivery System Preview" loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://fodieee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <button class="btn btn-glass btn-sm view-project-btn" data-project="foodie">
+                    <i class="fa-solid fa-layer-group"></i> Architecture & Info
+                  </button>
+                </div>
+              </div>
+              <div class="project-floating-tags">
+                <span class="badge-tag socket-tag"><i class="fa-solid fa-satellite-dish"></i> Socket.IO Live</span>
+                <span class="badge-tag rbac-tag"><i class="fa-solid fa-users-gear"></i> Multi-Role RBAC</span>
+              </div>
+            </div>
+
+            <div class="project-info-side">
+              <div class="project-category-badge">
+                <i class="fa-solid fa-utensils"></i> Real-Time Logistics & FoodTech
+              </div>
+              <h3 class="project-title">Foodie: MERN Food Delivery System</h3>
+              <p class="project-tagline">High-throughput real-time on-demand ordering platform with live courier GPS
+                coordinates.</p>
+
+              <div class="project-description-box">
+                <ul class="project-bullets">
+                  <li><strong>Live Socket.IO Tracking:</strong> Real-time bidirectional courier dispatch and dynamic map
+                    location updates with zero latency overhead.</li>
+                  <li><strong>Triple-Role Dashboards:</strong> Dedicated, role-tailored dashboards for Customers
+                    (ordering/tracking), Delivery Agents (dispatch route), and Restaurant Owners (order queues).</li>
+                  <li><strong>Scalable MERN Backend:</strong> Resilient RESTful API endpoints in Node/Express secured
+                    with JWT, managing high concurrent order transactions in MongoDB.</li>
+                </ul>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Socket.IO</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">JWT Auth</span>
+              </div>
+
+              <!-- Action Links -->
+              <div class="project-links">
+                <a href="https://fodieee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <button class="btn btn-outline btn-sm view-project-btn" data-project="foodie">
+                  <i class="fa-solid fa-layer-group"></i> Architecture & Details
+                </button>
+                <a href="https://github.com/nishantsingh95/Foodie.git" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-glass btn-sm" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Track Record</span>
+          <h2 class="section-title">Industry <span class="gradient-text">Experience</span></h2>
+          <p class="section-desc">Practical industry contributions and measurable impact in fast-paced engineering
+            teams.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- InternPe Experience -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+            </div>
+
+            <div class="timeline-card glass-panel" data-tilt>
+              <div class="timeline-card-header">
+                <div>
+                  <span class="company-role">Web Development Intern</span>
+                  <h3 class="company-name"><i class="fa-solid fa-building"></i> InternPe</h3>
+                </div>
+                <div class="timeline-meta-box">
+                  <span class="timeline-date"><i class="fa-regular fa-calendar-days"></i> Sep 02, 2024 – Sep 29,
+                    2024</span>
+                  <button class="btn-verify-cert" data-cert="internpe">
+                    <i class="fa-solid fa-certificate"></i> View Certificate
+                  </button>
+                </div>
+              </div>
+
+              <div class="timeline-highlights">
+                <div class="highlight-item">
+                  <div class="highlight-badge"><i class="fa-solid fa-check"></i></div>
+                  <p>Developed and maintained responsive web applications using <strong>HTML, CSS, JavaScript, and
+                      React.js</strong>, significantly improving cross-device compatibility and user retention.</p>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-badge"><i class="fa-solid fa-check"></i></div>
+                  <p>Collaborated closely with backend engineers to integrate complex <strong>RESTful APIs</strong> and
+                    dynamic data-driven features, streamlining workflow efficiency by <strong>30%</strong>.</p>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-badge"><i class="fa-solid fa-check"></i></div>
+                  <p>Spearheaded front-end performance optimizations and UI/UX modernization, reducing page load time by
+                    <strong>35%</strong> and delivering an ultra-smooth browsing experience.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">JavaScript ES6</span>
+                <span class="tech-pill">RESTful APIs</span>
+                <span class="tech-pill">UI/UX Optimization</span>
+                <span class="tech-pill">Cross-Device Compatibility</span>
+              </div>
+
+              <!-- Certificate Attachment in Experience Card -->
+              <div class="exp-cert-card">
+                <div class="exp-cert-thumb cert-modal-trigger" data-cert="internpe"
+                  title="Click to inspect official certificate">
+                  <img src="assets/images/certificates/cert-internpe.png"
+                    alt="InternPe Internship Completion Certificate" loading="lazy">
+                  <div class="exp-cert-zoom-overlay">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  </div>
+                </div>
+                <div class="exp-cert-details">
+                  <div class="exp-cert-badge">
+                    <i class="fa-solid fa-circle-check"></i> Verified Internship Credential
+                  </div>
+                  <h4 class="exp-cert-title">Internship Completion Certificate</h4>
+                  <div class="exp-cert-meta">
+                    <span><i class="fa-solid fa-hashtag"></i> CID: <strong>IPI#41873</strong></span>
+                    <span><i class="fa-solid fa-briefcase"></i> Domain: <strong>Web Development</strong></span>
+                    <span><i class="fa-solid fa-shield-halved"></i> <strong>ISO 9001:2015 & MSME
+                        Certified</strong></span>
+                  </div>
+                  <div class="exp-cert-actions">
+                    <button class="btn btn-primary btn-xs btn-verify-cert" data-cert="internpe">
+                      <i class="fa-solid fa-award"></i> View Official Credential
+                    </button>
+                    <a href="assets/images/certificates/cert-internpe.png" target="_blank" rel="noopener noreferrer"
+                      class="btn btn-outline btn-xs">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Document
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS SECTION -->
+    <section class="section cert-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-medal"></i> Verified Credentials</span>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Achievements</span></h2>
+          <p class="section-desc">Accredited certifications from Microsoft, NPTEL/IIT, and recognized engineering
+            organizations.</p>
+        </div>
+
+        <div class="cert-grid">
+
+          <!-- 1. AZ-900: Microsoft Azure Fundamentals -->
+          <div class="cert-card glass-panel" data-tilt>
+            <div class="cert-thumb-preview cert-modal-trigger" data-cert="az900"
+              title="Click to inspect Azure Certificate">
+              <img src="assets/images/certificates/cert-azure.png" alt="Microsoft Azure Fundamentals Certificate"
+                loading="lazy">
+              <div class="cert-thumb-hover">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Inspect Credential</span>
+              </div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-badge-header">
+                <div class="cert-brand-icon azure-brand">
+                  <i class="fa-brands fa-microsoft"></i>
+                </div>
+                <span class="cert-year">Sep 2023</span>
+              </div>
+              <h3 class="cert-title">AZ-900: Microsoft Azure Fundamentals</h3>
+              <p class="cert-issuer"><i class="fa-solid fa-building-columns"></i> Microsoft Certified</p>
+              <div class="cert-credential-id">
+                <i class="fa-solid fa-fingerprint"></i> Certiport: <strong>EAr2-uTbx</strong>
+              </div>
+              <p class="cert-desc">Foundational knowledge of cloud computing architecture, Azure services, workloads,
+                security, privacy, and cost governance.</p>
+              <div class="cert-action">
+                <button class="btn btn-primary btn-sm cert-modal-trigger" data-cert="az900">
+                  <i class="fa-solid fa-award"></i> View Credential
+                </button>
+                <a href="assets/images/certificates/cert-azure.png" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm" title="Open Full Certificate">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Microsoft AI Skills Challenge -->
+          <div class="cert-card glass-panel" data-tilt>
+            <div class="cert-thumb-preview cert-modal-trigger" data-cert="msai"
+              title="Click to inspect Microsoft AI Certificate">
+              <img src="assets/images/certificates/cert-msai.png" alt="Microsoft AI Skills Challenge Certificate"
+                loading="lazy">
+              <div class="cert-thumb-hover">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Inspect Credential</span>
+              </div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-badge-header">
+                <div class="cert-brand-icon ai-brand">
+                  <i class="fa-solid fa-microchip"></i>
+                </div>
+                <span class="cert-year">Jan 2024</span>
+              </div>
+              <h3 class="cert-title">Microsoft AI Skills Challenge</h3>
+              <p class="cert-issuer"><i class="fa-solid fa-brain"></i> Microsoft Learn</p>
+              <div class="cert-credential-id">
+                <i class="fa-solid fa-hashtag"></i> <strong>#MicrosoftLearn</strong>
+              </div>
+              <p class="cert-desc">Mastered artificial intelligence paradigms, Azure Cognitive Services, prompt
+                engineering essentials, and ethical AI development workflows.</p>
+              <div class="cert-action">
+                <button class="btn btn-primary btn-sm cert-modal-trigger" data-cert="msai">
+                  <i class="fa-solid fa-award"></i> View Credential
+                </button>
+                <a href="assets/images/certificates/cert-msai.png" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm" title="Open Full Certificate">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. NPTEL Compiler Design (Elite) -->
+          <div class="cert-card glass-panel" data-tilt>
+            <div class="cert-thumb-preview cert-modal-trigger" data-cert="compiler"
+              title="Click to inspect Compiler Design Certificate">
+              <img src="assets/images/certificates/cert-compiler.png" alt="NPTEL Compiler Design Certificate"
+                loading="lazy">
+              <div class="cert-thumb-hover">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Inspect Credential</span>
+              </div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-badge-header">
+                <div class="cert-brand-icon nptel-brand">
+                  <i class="fa-solid fa-file-code"></i>
+                </div>
+                <span class="cert-year badge-elite">Elite • 2025</span>
+              </div>
+              <h3 class="cert-title">NPTEL Online Certification: Compiler Design</h3>
+              <p class="cert-issuer"><i class="fa-solid fa-graduation-cap"></i> IIT Kharagpur / Swayam</p>
+              <div class="cert-credential-id">
+                <i class="fa-solid fa-id-card"></i> Roll: <strong>NPTEL25CS13S1146400277</strong>
+              </div>
+              <p class="cert-desc">12-week course certified with <strong>60% Elite score</strong> covering lexical
+                analysis, LR parsing, syntax-directed translation, symbol tables, and code optimization.</p>
+              <div class="cert-action">
+                <button class="btn btn-primary btn-sm cert-modal-trigger" data-cert="compiler">
+                  <i class="fa-solid fa-award"></i> View Credential
+                </button>
+                <a href="assets/images/certificates/cert-compiler.png" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm" title="Open Full Certificate">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Exceptional</span> Together</h2>
+          <p class="section-desc">Open for full-time Full Stack MERN engineer roles, AI-driven projects, and impactful
+            engineering opportunities.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Details Cards -->
+          <div class="contact-details-side">
+            <div class="contact-card glass-panel" data-tilt>
+              <div class="contact-icon email-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">Email Address</span>
+                <a href="mailto:nishantsingh8195@gmail.com" class="contact-value link-hover"
+                  id="emailContact">nishantsingh8195@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="nishantsingh8195@gmail.com" title="Copy Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel" data-tilt>
+              <div class="contact-icon phone-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">Direct Phone / WhatsApp</span>
+                <a href="tel:+919555535045" class="contact-value link-hover" id="phoneContact">+91-9555535045</a>
+              </div>
+              <button class="copy-btn" data-copy="+919555535045" title="Copy Phone Number">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel" data-tilt>
+              <div class="contact-icon loc-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Kanpur, Uttar Pradesh, India</span>
+              </div>
+            </div>
+
+            <div class="contact-socials-box glass-panel">
+              <h4>Connect on Professional Networks</h4>
+              <div class="social-button-row">
+                <a href="https://www.linkedin.com/in/nishant-singh-2045b3267/" target="_blank" rel="noopener noreferrer"
+                  class="social-btn linkedin-btn">
+                  <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/nishantsingh95" target="_blank" rel="noopener noreferrer"
+                  class="social-btn github-btn">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-side glass-panel" data-tilt>
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/nishantsingh8195@gmail.com"
+              method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New Portfolio Message via Nishant Singh Portfolio">
+              <h3 class="form-title">Send A Direct Message</h3>
+              <p class="form-subtitle">Messages are delivered directly to my inbox at
+                <strong>nishantsingh8195@gmail.com</strong>.
+              </p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="userName"><i class="fa-solid fa-user"></i> Your Name *</label>
+                  <input type="text" id="userName" name="name" required placeholder="e.g. Alex Johnson"
+                    class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="userEmail"><i class="fa-solid fa-envelope"></i> Your Email *</label>
+                  <input type="email" id="userEmail" name="email" required placeholder="alex@company.com"
+                    class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="userSubject"><i class="fa-solid fa-pen-nib"></i> Subject</label>
+                <input type="text" id="userSubject" name="subject"
+                  placeholder="Opportunity / Project Collaboration / Inquiry" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage"><i class="fa-solid fa-message"></i> Message *</label>
+                <textarea id="userMessage" name="message" rows="5" required
+                  placeholder="Hi Nishant, I came across your portfolio and would like to connect regarding..."
+                  class="form-input"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-glow" id="sendMessageBtn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message Directly
+              </button>
+
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 class="footer-brand-title gradient-text">Nishant Singh</h3>
+          <p class="footer-tagline">Building modern, scalable MERN web applications with integrated intelligence.</p>
+        </div>
+
+        <div class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#certifications">Certificates</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <strong>Nishant Singh</strong>. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:nishantsingh8195@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="tel:+919555535045"><i class="fa-solid fa-phone"></i> +91-9555535045</a>
+          <a href="https://github.com/nishantsingh95" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/nishant-singh-2045b3267/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK ACTIONS -->
+  <button id="backToTop" class="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. FULL RESUME MODAL -->
+  <div class="modal-overlay" id="resumeModal">
+    <div class="modal-container resume-modal-container">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i class="fa-solid fa-file-invoice gradient-text"></i>
+          <div>
+            <h3>Curriculum Vitae — Nishant Singh</h3>
+            <span class="modal-subtitle">Original 1-Page Resume • Full Stack MERN & AI Integration</span>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <a href="assets/docs/Nishant_Singh_Resume.pdf" download="Nishant_Singh_Resume.pdf"
+            class="btn btn-primary btn-sm" id="downloadResumePdfBtn">
+            <i class="fa-solid fa-file-arrow-down"></i> Download
+          </a>
+          <button class="btn btn-glass btn-sm" id="toggleResumeFormatBtn"
+            title="Toggle between interactive and original PDF view">
+            <i class="fa-solid fa-file-pdf"></i> <span id="toggleResumeFormatText">View Original PDF</span>
+          </button>
+          <button class="modal-close-btn" id="closeResumeModal" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Original 1-Page PDF Preview Container (Initially Hidden) -->
+      <div class="modal-body original-resume-doc-area" id="originalResumeDocArea" style="display: none;">
+        <div class="resume-pdf-banner">
+          <span><i class="fa-solid fa-circle-check text-cyan"></i> Original Resume Document</span>
+          <a href="assets/docs/Nishant_Singh_Resume.pdf" download="Nishant_Singh_Resume.pdf"
+            class="btn btn-primary btn-xs">
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+        </div>
+        <div class="resume-pdf-img-wrap">
+          <img src="assets/images/resume-preview.png" alt="Nishant Singh Original 1-Page Resume"
+            class="original-resume-img" id="originalResumeImg">
+        </div>
+      </div>
+
+      <!-- Interactive Printable 1-Page Resume Container -->
+      <div class="modal-body printable-resume" id="printableResumeArea">
+        <header class="resume-header">
+          <h2 class="resume-name">Nishant Singh</h2>
+          <p class="resume-subtitle">Full Stack MERN Developer | AI Integration Enthusiast</p>
+          <div class="resume-contacts-row">
+            <span><i class="fa-solid fa-location-dot"></i> Kanpur, Uttar Pradesh</span>
+            <span class="sep">|</span>
+            <span><i class="fa-solid fa-phone"></i> <a href="tel:+919555535045">+91-9555535045</a></span>
+            <span class="sep">|</span>
+            <span><i class="fa-solid fa-envelope"></i> <a
+                href="mailto:nishantsingh8195@gmail.com">nishantsingh8195@gmail.com</a></span>
+            <span class="sep">|</span>
+            <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/nishant-singh-2045b3267/"
+                target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+            <span class="sep">|</span>
+            <span><i class="fa-brands fa-github"></i> <a href="https://github.com/nishantsingh95" target="_blank"
+                rel="noopener noreferrer">GitHub</a></span>
+          </div>
+        </header>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">SUMMARY</h4>
+          <p>Innovative and performance-driven Computer Science undergraduate with expertise in full-stack MERN
+            development, AI integration, and modern web technologies. Experienced in building secure, scalable, and
+            real-time applications with a strong focus on performance optimization and user experience. Microsoft Azure
+            Fundamentals certified with knowledge of cloud services, API development, and deployment workflows. Strong
+            foundation in programming, software development lifecycle, and core computer science concepts, combined with
+            excellent communication and teamwork skills.</p>
+        </section>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">EDUCATION</h4>
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <strong>ITM University, Gwalior MP</strong>
+              <span class="resume-date">Sep 2022-June 2026</span>
+            </div>
+            <div class="resume-item-sub">
+              <span>Bachelor of Technology in Computer Science Engineering</span>
+              <span class="resume-cgpa"><strong>CGPA: 8.2</strong></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">PROJECTS</h4>
+
+          <!-- Jharkhand Tourism Platform -->
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <strong>Jharkhand Tourism Platform:</strong>
+              <span class="resume-links-inline">
+                <a href="https://github.com/nishantsingh95/Jharkhand-Tourism.git" target="_blank"
+                  rel="noopener noreferrer" class="resume-ext-link">GitHub</a> |
+                <a href="https://jharkhandtourismm.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="resume-ext-link">Demo</a>
+              </span>
+            </div>
+            <p class="resume-tech-line"><strong>Tech Stack:</strong> React.js, Node.js, Express.js, MongoDB, Tailwind
+              CSS, AI Integration, REST APIs.</p>
+            <p class="resume-desc-text">Built an AI-enabled tourism solution to promote tourism in Jharkhand by enabling
+              users to explore destinations, book trips, purchase local crafts, and interact with an AI-powered
+              assistant. Architected a dynamic admin dashboard for tourism administrators to manage destinations,
+              bookings, products, and user interactions efficiently. Implemented scalable frontend and backend
+              architecture using React.js, Node.js, Express.js, MongoDB, and REST APIs.</p>
+          </div>
+
+          <!-- Gymee: Gym Management System -->
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <strong>Gymee: Gym Management System</strong>
+              <span class="resume-links-inline">
+                <a href="https://github.com/nishantsingh95/Gymme.git" target="_blank" rel="noopener noreferrer"
+                  class="resume-ext-link">GitHub</a> |
+                <a href="https://gymmeee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="resume-ext-link">Demo</a>
+              </span>
+            </div>
+            <p class="resume-tech-line"><strong>Tech Stack:</strong> React.js, Node.js, Express.js, MongoDB, Tailwind
+              CSS, AI Integration, JWT Authentication.</p>
+            <p class="resume-desc-text">Engineered a MERN-based Gym Management System with JWT authentication, member
+              management, and scheduled email notifications. Integrated the Google Gemini AI chatbot for instant user
+              support, improving user query resolution speed and enhancing customer engagement. Crafted a responsive
+              modern UI using React.js, Tailwind CSS, and Framer Motion for better accessibility and user experience.
+            </p>
+          </div>
+
+          <!-- Foodie: MERN Food Delivery System -->
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <strong>Foodie: MERN Food Delivery System</strong>
+              <span class="resume-links-inline">
+                <a href="https://github.com/nishantsingh95/Foodie.git" target="_blank" rel="noopener noreferrer"
+                  class="resume-ext-link">GitHub</a> |
+                <a href="https://fodieee.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="resume-ext-link">Demo</a>
+              </span>
+            </div>
+            <p class="resume-tech-line"><strong>Tech Stack:</strong> React.js, Node.js, Express.js, MongoDB, REST APIs,
+              Socket.IO, Tailwind CSS, JWT Authentication.</p>
+            <p class="resume-desc-text">Built a full-stack food delivery platform with live order tracking and live
+              delivery agent location updates using Socket.IO. Created role-based dashboards for Users, Delivery
+              Partners, and Restaurant Owners to improve operational efficiency and order management. Connected secure
+              backend APIs using Node.js, Express.js, and MongoDB for reliable performance.</p>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">SKILLS</h4>
+          <p class="resume-skill-row"><strong>Programming Languages:</strong> Java, JavaScript</p>
+          <p class="resume-skill-row"><strong>Frontend Technologies:</strong> HTML, CSS, JavaScript, TypeScript,
+            Bootstrap, Tailwind CSS, React.js, Material UI</p>
+          <p class="resume-skill-row"><strong>Backend Technologies:</strong> Node.js, Express.js, RESTful API
+            Development, JWT (JSON Web Token) Authentication, Socket.IO</p>
+          <p class="resume-skill-row"><strong>Database:</strong> MongoDB, MySQL</p>
+          <p class="resume-skill-row"><strong>Cloud Platforms:</strong> AWS (ECS, EC2, S3), Vercel, Netlify, Render</p>
+          <p class="resume-skill-row"><strong>Fundamentals:</strong> Object Oriented Programming, DBMS, Operating
+            System, Computer Networks, Data Structures and Algorithms</p>
+          <p class="resume-skill-row"><strong>Tools & Platforms:</strong> Git & GitHub, Docker, Postman, VS Code</p>
+        </section>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">EXPERIENCE</h4>
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <strong>Web Development Intern — InternPe</strong>
+              <span class="resume-links-inline">Sep-2024 | <a href="assets/images/certificates/internpe-certificate.png"
+                  target="_blank" rel="noopener noreferrer" class="resume-ext-link">Certificate</a></span>
+            </div>
+            <p class="resume-desc-text">Developed and maintained responsive web pages using HTML, CSS, JavaScript, and
+              React.js, improving cross-device compatibility and user experience. Collaborated with backend developers
+              to integrate RESTful APIs and enhance dynamic data-driven features, streamlining workflow efficiency by
+              30%. Boosted website performance and upgraded UI/UX, reducing page load time by 35% and increasing user
+              engagement.</p>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <h4 class="resume-heading">CERTIFICATE & ACHIEVEMENT</h4>
+          <ul class="resume-cert-list">
+            <li>• NPTEL Online Certification of Compiler Design - 2025 | <a
+                href="assets/images/certificates/nptel-compiler-design.png" target="_blank" rel="noopener noreferrer"
+                class="resume-ext-link">Certificate</a></li>
+            <li>• AZ-900: Microsoft Azure Fundamentals Certified - 2023 | <a
+                href="assets/images/certificates/azure-az900.png" target="_blank" rel="noopener noreferrer"
+                class="resume-ext-link">Certificate</a></li>
+            <li>• Microsoft AI Skills Challenge – Microsoft - 2024 | <a
+                href="assets/images/certificates/microsoft-ai-skills.png" target="_blank" rel="noopener noreferrer"
+                class="resume-ext-link">Certificate</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PROJECT LIVE PREVIEW MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-container project-modal-container">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-tag" id="modalProjectTag">Full Stack MERN</span>
+          <h3 id="modalProjectTitle">Project Title</h3>
+        </div>
+        <button class="modal-close-btn" id="closeProjectModal" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="project-modal-preview">
+          <!-- Browser Frame Simulation -->
+          <div class="browser-mockup-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-address" id="modalBrowserUrl">
+              <i class="fa-solid fa-lock"></i> https://app.nishant.dev/demo
+            </div>
+            <div class="browser-badge">
+              <span class="live-dot"></span> LIVE SIMULATION
+            </div>
+          </div>
+
+          <div class="browser-preview-viewport">
+            <img id="modalProjectImage" src="assets/images/tourism.jpg" alt="Live Mockup" class="modal-preview-img">
+          </div>
+        </div>
+
+        <div class="modal-detail-content">
+          <div class="modal-tabs">
+            <button class="modal-tab-btn active" data-tab="overview">Overview</button>
+            <button class="modal-tab-btn" data-tab="architecture">System Architecture</button>
+            <button class="modal-tab-btn" data-tab="keymetrics">Key Highlights</button>
+          </div>
+
+          <div class="tab-pane active" id="pane-overview">
+            <p id="modalProjectOverviewText" class="modal-text"></p>
+            <h5 class="tab-subheading">Tech Stack Applied:</h5>
+            <div class="tech-pills" id="modalProjectPills"></div>
+          </div>
+
+          <div class="tab-pane" id="pane-architecture">
+            <div class="architecture-diagram" id="modalProjectArch"></div>
+          </div>
+
+          <div class="tab-pane" id="pane-keymetrics">
+            <ul class="highlight-list" id="modalProjectBullets"></ul>
+          </div>
+
+          <div class="modal-footer-actions">
+            <a href="https://github.com/nishantsingh" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+              id="modalRepoBtn">
+              <i class="fa-brands fa-github"></i> View Source Code
+            </a>
+            <a href="#" class="btn btn-primary" id="modalLiveDemoBtn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Prototype
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTIFICATE VERIFIER MODAL -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-container cert-modal-container">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i class="fa-solid fa-award gradient-text"></i>
+          <h3 id="certModalTitle">Certificate Verification</h3>
+        </div>
+        <button class="modal-close-btn" id="closeCertModal" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body cert-modal-body">
+        <div class="cert-modal-header-meta">
+          <div class="cert-seal">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div>
+            <h4 id="certModalOrg" class="cert-modal-org">Organization</h4>
+            <h2 id="certModalName" class="cert-modal-name">Certificate Name</h2>
+            <div class="cert-status-badge">
+              <i class="fa-solid fa-circle-check"></i> Officially Verified Credential
+            </div>
+          </div>
+        </div>
+
+        <!-- High-Resolution Certificate Document Preview -->
+        <div class="cert-modal-doc-viewer">
+          <img id="certModalImg" src="assets/images/certificates/cert-azure.png" alt="Certificate Preview"
+            class="cert-modal-img" loading="lazy">
+          <div class="cert-modal-doc-bar">
+            <span class="cert-doc-hint"><i class="fa-solid fa-shield-halved"></i> Verified Authenticity</span>
+            <a id="certModalOpenFull" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-xs">
+              <i class="fa-solid fa-up-right-and-down-left-from-center"></i> Open Full Document
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-meta-grid">
+          <div class="cert-meta-item">
+            <span class="meta-label">Issued To</span>
+            <span class="meta-val">Nishant Singh</span>
+          </div>
+          <div class="cert-meta-item">
+            <span class="meta-label">Issue / Completion Date</span>
+            <span class="meta-val" id="certModalYear">2024</span>
+          </div>
+          <div class="cert-meta-item">
+            <span class="meta-label">Credential ID / Roll</span>
+            <span class="meta-val font-mono" id="certModalCredId">N/A</span>
+          </div>
+          <div class="cert-meta-item">
+            <span class="meta-label">Validation Status</span>
+            <span class="meta-val text-success"><i class="fa-solid fa-circle-check"></i> Active & Verified</span>
+          </div>
+        </div>
+
+        <p class="cert-modal-desc" id="certModalDesc"></p>
+
+        <div class="cert-modal-actions">
+          <a id="certModalVerifyBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential Online
+          </a>
+          <button class="btn btn-secondary" id="certShareBtn">
+            <i class="fa-solid fa-share-nodes"></i> Share Credential
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon" id="toastIcon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-message" id="toastMessage">Copied to clipboard!</div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
