@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // ==================== CONTACT FORM SUBMISSION ====================
+  // ==================== CONTACT FORM SUBMISSION (WEB3FORMS) ====================
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
   const sendMessageBtn = document.getElementById('sendMessageBtn');
@@ -712,17 +712,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
-      // Prevent default navigation to keep user on the page
       e.preventDefault();
 
       const name = userNameInput ? userNameInput.value.trim() : '';
       const email = userEmailInput ? userEmailInput.value.trim() : '';
       const subject = userSubjectInput && userSubjectInput.value.trim() ? userSubjectInput.value.trim() : 'Portfolio Inquiry';
       const message = userMessageInput ? userMessageInput.value.trim() : '';
+      const keyInput = document.getElementById('web3FormsKey');
+      const accessKey = keyInput ? keyInput.value.trim() : '';
 
       if (!name || !email || !message) {
         formStatus.textContent = 'Please fill out all required fields.';
         formStatus.className = 'form-status error';
+        return;
+      }
+
+      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+        formStatus.innerHTML = '<i class="fa-solid fa-key"></i> Setup required: Paste your free Web3Forms Access Key into <code>index.html</code>. Get it instantly at <a href="https://web3forms.com" target="_blank" style="color:var(--accent-cyan);text-decoration:underline;font-weight:600;">web3forms.com</a>';
+        formStatus.className = 'form-status warning';
         return;
       }
 
@@ -731,58 +738,42 @@ document.addEventListener('DOMContentLoaded', () => {
       formStatus.textContent = '';
       formStatus.className = 'form-status';
 
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('email', email);
-      formData.append('_subject', `New Portfolio Message from ${name}: ${subject}`);
-      formData.append('message', message);
-      formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
-
       try {
-        // Direct background submission to FormSubmit endpoint
-        const fetchPromise = fetch('https://formsubmit.co/ajax/nishantsingh8195@gmail.com', {
+        const formData = new FormData(contactForm);
+        formData.set('subject', `Portfolio Message from ${name}: ${subject}`);
+
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: {
-            'Accept': 'application/json'
-          },
           body: formData
-        }).catch(err => {
-          console.warn('AJAX dispatch notice:', err);
         });
 
-        // Also submit to the hidden iframe for guaranteed browser delivery without leaving the page
-        const iframe = document.getElementById('formSubmitIframe');
-        if (iframe) {
-          contactForm.target = 'formSubmitIframe';
-          HTMLFormElement.prototype.submit.call(contactForm);
-        }
+        const data = await response.json();
 
-        // Wait briefly for network transmission
-        await Promise.race([
-          fetchPromise,
-          new Promise(resolve => setTimeout(resolve, 800))
-        ]);
+        if (response.status === 200 && data.success) {
+          formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully!';
+          formStatus.className = 'form-status success';
+          showToast('Message sent successfully!');
+          playUiSound('chime');
+          contactForm.reset();
+        } else {
+          formStatus.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${data.message || 'Error sending message. Please verify your access key.'}`;
+          formStatus.className = 'form-status error';
+        }
       } catch (err) {
-        console.warn('Direct send status:', err);
+        console.error('Web3Forms dispatch error:', err);
+        formStatus.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Connection error. Please try again.';
+        formStatus.className = 'form-status error';
+      } finally {
+        sendMessageBtn.disabled = false;
+        sendMessageBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+        setTimeout(() => {
+          if (formStatus.classList.contains('success')) {
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
+          }
+        }, 6000);
       }
-
-      // Success feedback directly in the page - no mail app ever opened
-      formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully!';
-      formStatus.className = 'form-status success';
-      showToast('Message sent successfully!');
-      playUiSound('chime');
-      contactForm.reset();
-
-      sendMessageBtn.disabled = false;
-      sendMessageBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-
-      setTimeout(() => {
-        if (formStatus.classList.contains('success')) {
-          formStatus.textContent = '';
-          formStatus.className = 'form-status';
-        }
-      }, 6000);
     });
   }
 
