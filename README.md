@@ -3,6 +3,7 @@
   # 🚀 Nishant Singh — Developer Portfolio
   ### Full Stack MERN Developer | AI Integration Enthusiast | Cloud Practitioner
 
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-nishantsingh95.github.io/Portfolio-00f5d4?style=for-the-badge&logo=googlechrome&logoColor=black)](https://nishantsingh95.github.io/Portfolio/)
   [![Portfolio Status](https://img.shields.io/badge/Status-Active-00f5d4?style=for-the-badge&logo=visualstudiocode&logoColor=black)](https://github.com/nishantsingh95/Portfolio)
   [![License](https://img.shields.io/badge/License-MIT-9d4edd?style=for-the-badge)](LICENSE)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-singh-2045b3267/)
