@@ -705,15 +705,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
   const sendMessageBtn = document.getElementById('sendMessageBtn');
+  const directGmailBtn = document.getElementById('directGmailBtn');
+  const userNameInput = document.getElementById('userName');
+  const userEmailInput = document.getElementById('userEmail');
+  const userSubjectInput = document.getElementById('userSubject');
+  const userMessageInput = document.getElementById('userMessage');
+
+  // Synchronize Direct Mailto button with current form inputs
+  function updateDirectMailLink() {
+    if (!directGmailBtn) return;
+    const name = userNameInput ? userNameInput.value.trim() : '';
+    const email = userEmailInput ? userEmailInput.value.trim() : '';
+    const subject = userSubjectInput && userSubjectInput.value.trim() ? userSubjectInput.value.trim() : 'Portfolio Inquiry';
+    const message = userMessageInput ? userMessageInput.value.trim() : '';
+
+    const bodyContent = `Hi Nishant,\n\n${message || '[Your message here]'}\n\n---\nFrom: ${name || 'A Portfolio Visitor'}\nEmail: ${email || 'Not specified'}`;
+    const mailto = `mailto:nishantsingh8195@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+    directGmailBtn.href = mailto;
+  }
+
+  [userNameInput, userEmailInput, userSubjectInput, userMessageInput].forEach(input => {
+    if (input) {
+      input.addEventListener('input', updateDirectMailLink);
+    }
+  });
+  updateDirectMailLink();
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('userName').value.trim();
-      const email = document.getElementById('userEmail').value.trim();
-      const subject = document.getElementById('userSubject').value.trim() || 'Portfolio Inquiry';
-      const message = document.getElementById('userMessage').value.trim();
+      const name = userNameInput.value.trim();
+      const email = userEmailInput.value.trim();
+      const subject = userSubjectInput.value.trim() || 'Portfolio Inquiry';
+      const message = userMessageInput.value.trim();
 
       if (!name || !email || !message) {
         formStatus.textContent = 'Please fill out all required fields.';
@@ -726,6 +751,9 @@ document.addEventListener('DOMContentLoaded', () => {
       formStatus.textContent = '';
       formStatus.className = 'form-status';
 
+      const bodyContent = `Hi Nishant,\n\n${message}\n\n---\nFrom: ${name}\nEmail: ${email}`;
+      const mailtoUrl = `mailto:nishantsingh8195@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+
       const formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
@@ -734,26 +762,26 @@ document.addEventListener('DOMContentLoaded', () => {
       formData.append('_captcha', 'false');
       formData.append('_template', 'table');
 
-      // 4-second maximum timeout so user is never left waiting indefinitely
+      let deliverySuccessful = false;
+
+      // 3.5s timeout for third-party dispatch
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const timeoutId = setTimeout(() => controller.abort(), 3500);
 
       try {
-        const isLocal = window.location.protocol === 'file:';
-        if (!isLocal) {
-          await fetch('https://formsubmit.co/ajax/nishantsingh8195@gmail.com', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json'
-            },
-            body: formData,
-            signal: controller.signal
-          }).catch(err => {
-            console.warn('Form dispatch handled:', err);
-          });
-        } else {
-          // Subtle realistic tactile delay for local testing
-          await new Promise(resolve => setTimeout(resolve, 350));
+        const response = await fetch('https://formsubmit.co/ajax/nishantsingh8195@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData,
+          signal: controller.signal
+        });
+
+        const data = await response.json().catch(() => null);
+
+        if (response.ok && data && data.success !== 'false') {
+          deliverySuccessful = true;
         }
       } catch (err) {
         console.warn('Direct send status:', err);
@@ -761,12 +789,28 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(timeoutId);
       }
 
-      // Success feedback
-      formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully!';
-      formStatus.className = 'form-status success';
-      showToast('Message sent successfully!');
-      playUiSound('chime');
-      contactForm.reset();
+      if (deliverySuccessful) {
+        formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully!';
+        formStatus.className = 'form-status success';
+        showToast('Message sent successfully!');
+        playUiSound('chime');
+        contactForm.reset();
+        updateDirectMailLink();
+      } else {
+        // If third-party backend is slow or pending activation, guarantee delivery via native mail dispatch
+        formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Launching email client to send directly to <strong>nishantsingh8195@gmail.com</strong>... <br><a href="${mailtoUrl}" style="color:var(--accent-cyan); text-decoration:underline; font-weight:600; margin-top:6px; display:inline-block;">Click here if your email client didn't open automatically</a>`;
+        formStatus.className = 'form-status success';
+        showToast('Opening email dispatch...');
+        playUiSound('chime');
+        
+        // Open user's email client directly with prefilled message
+        window.location.href = mailtoUrl;
+
+        setTimeout(() => {
+          contactForm.reset();
+          updateDirectMailLink();
+        }, 1500);
+      }
 
       sendMessageBtn.disabled = false;
       sendMessageBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
@@ -776,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formStatus.textContent = '';
           formStatus.className = 'form-status';
         }
-      }, 5000);
+      }, 9000);
     });
   }
 
