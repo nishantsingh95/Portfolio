@@ -5,13 +5,14 @@
 
   [![Live Demo](https://img.shields.io/badge/Live_Demo-nishantsingh95.github.io/Portfolio-00f5d4?style=for-the-badge&logo=googlechrome&logoColor=black)](https://nishantsingh95.github.io/Portfolio/)
   [![Portfolio Status](https://img.shields.io/badge/Status-Active-00f5d4?style=for-the-badge&logo=visualstudiocode&logoColor=black)](https://github.com/nishantsingh95/Portfolio)
+  [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](#-docker-containerization)
   [![License](https://img.shields.io/badge/License-MIT-9d4edd?style=for-the-badge)](LICENSE)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-singh-2045b3267/)
   [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nishantsingh95)
   [![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nishantsingh8195@gmail.com)
 
   <p align="center">
-    A state-of-the-art developer portfolio built with <strong>Three.js 3D canvas</strong>, <strong>Cyber-Luxe Dark Aesthetics</strong>, <strong>Vanilla CSS Glassmorphism</strong>, interactive sound synthesis, and real-time email dispatch.
+    A state-of-the-art developer portfolio built with <strong>Three.js 3D canvas</strong>, <strong>Cyber-Luxe Dark Aesthetics</strong>, <strong>Vanilla CSS Glassmorphism</strong>, interactive sound synthesis, fast email dispatch, and production Docker containerization.
   </p>
 
 </div>
@@ -22,12 +23,13 @@
 
 - 🌌 **Interactive 3D Three.js Visuals**: Dynamic floating wireframe geometry and particle field with mouse-tracking parallax.
 - 🎨 **Cyber-Luxe Design System**: Modern dark theme with neon cyan (`#00f5d4`) and violet (`#9d4edd`) glows, ultra-smooth micro-animations, and glassmorphic cards.
-- 🔊 **Synthesizer UI Audio**: Lightweight procedural Web Audio API sound effects for interactive feedback without external mp3 audio files.
+- 🔊 **Synthesizer UI Audio**: Lightweight procedural Web Audio API sound effects for interactive feedback without external audio dependencies.
 - 📄 **1-Page Original Resume Integration**:
   - Direct 1-click download of the authentic 1-page PDF.
   - Interactive web viewer with high-resolution document preview modal.
   - Pixel-perfect `@media print` single-page budget.
-- 📬 **Direct Contact Dispatch**: FormSubmit AJAX integration delivering visitor inquiries directly to `nishantsingh8195@gmail.com` with zero page reloads.
+- 📬 **Fast Direct Contact Dispatch**: Optimized AJAX submission with real-time feedback, abort timeouts, and zero page reloads.
+- 🐳 **Containerized & Cloud-Ready**: Fully dockerized with Nginx Alpine and pre-configured for GitHub Pages & Vercel.
 - 📱 **100% Fully Responsive**: Optimized across 4K displays, laptops, tablets, and smartphones.
 
 ---
@@ -41,8 +43,8 @@
 | **Frontend Frameworks** | React.js, Tailwind CSS, Bootstrap, Material UI |
 | **Backend & APIs** | Node.js, Express.js, RESTful APIs, JWT Authentication, Socket.IO |
 | **Databases** | MongoDB, MySQL |
-| **Cloud & DevOps** | Microsoft Azure (AZ-900 Certified), AWS (EC2, S3, ECS), Netlify, Vercel, Render |
-| **Developer Tools** | Git, GitHub, Docker, Postman, VS Code |
+| **Cloud & DevOps** | Docker, Microsoft Azure (AZ-900 Certified), AWS (EC2, S3, ECS), Netlify, Vercel, GitHub Actions |
+| **Developer Tools** | Git, GitHub, Postman, VS Code, Nginx |
 
 ---
 
@@ -81,6 +83,9 @@
 
 ```bash
 Portfolio/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml                  # GitHub Actions CI/CD for GitHub Pages
 ├── assets/
 │   ├── docs/
 │   │   └── Nishant_Singh_Resume.pdf    # Original 1-page resume
@@ -96,15 +101,20 @@ Portfolio/
 ├── js/
 │   ├── main.js                         # Application logic, audio synth, form dispatch
 │   └── three-scene.js                  # Three.js 3D interactive background
+├── .dockerignore                       # Docker build context exclusions
 ├── .gitignore
+├── docker-compose.yml                  # One-click Docker Compose configuration
+├── Dockerfile                          # Production Nginx Alpine container definition
 ├── index.html                          # Semantic single-page portfolio
-└── README.md
+├── README.md                           # Documentation
+└── vercel.json                         # Vercel routing & cache headers
 ```
 
 ---
 
 ## 💻 Local Setup & Development
 
+### Standard Setup:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/nishantsingh95/Portfolio.git
@@ -122,6 +132,41 @@ Portfolio/
      ```bash
      npx serve .
      ```
+
+---
+
+## 🐳 Docker Containerization
+
+Run the portfolio inside an isolated, lightweight production Nginx container:
+
+### Using Docker Compose (Quickest):
+```bash
+# Build and start container in the background
+docker compose up -d --build
+
+# Stop the container
+docker compose down
+```
+
+### Using Docker CLI:
+```bash
+# Build the image
+docker build -t nishant-portfolio .
+
+# Run the container
+docker run -d -p 8080:80 --name portfolio-app nishant-portfolio
+```
+Access the application at: **`http://localhost:8080`**
+
+---
+
+## 🌐 Deployment Options
+
+| Platform | Details |
+| :--- | :--- |
+| **GitHub Pages** | Automated via [.github/workflows/deploy.yml](.github/workflows/deploy.yml) on push to `main`. Hosted at `https://nishantsingh95.github.io/Portfolio/`. |
+| **Vercel** | Configured with [vercel.json](vercel.json). Import directly via [Vercel Dashboard](https://vercel.com/new). |
+| **Docker** | Containerized with [Dockerfile](Dockerfile) using Nginx Alpine for deployment to AWS ECS, Azure App Service, or DigitalOcean. |
 
 ---
 
